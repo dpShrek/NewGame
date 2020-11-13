@@ -73,7 +73,7 @@ let newPoints;
 let start = document.getElementById("start");
 
         start.onclick = function () {
-            document.getElementById("seconds").innerHTML="19";
+            document.getElementById("seconds").innerHTML="60";
             document.getElementById("start").disabled = true;
             document.getElementById("zero").innerHTML="0";
             
