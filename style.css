@@ -1,6 +1,11 @@
 body {
     padding: 0;
     margin: 0;
+    -moz-background-size: 100%;
+    -webkit-background-size: 100%; 
+    -o-background-size: 100%; 
+    background-size: 100%; 
+    background-image: url(http://komotoz.ru/photo/images/krasivaja_osen/krasivaja_osen_11.jpg); ;
 }
 .heads  {
     margin-top: 50px;
