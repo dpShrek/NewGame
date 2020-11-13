@@ -4,7 +4,7 @@ let mytimer;
 
 //Добавление блока в игровое поле
         function KubAdd(col) {
-            let widthGame = document.getElementById("games").offsetWidth-100;	
+            let widthGame = document.getElementById("games").offsetWidth-50;	
                 for (let i = 0; i < col; i++) {
                     let newW = getRandomArbitrary (15, 30);
                     let newTop = getRandomArbitrary (45, 400);
