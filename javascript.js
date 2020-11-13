@@ -1,6 +1,6 @@
 
-var go = false;
-var mytimer;
+let go = false;
+let mytimer;
 
 //Добавление блока в игровое поле
         function KubAdd(col) {
