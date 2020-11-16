@@ -1,17 +1,16 @@
-
 let go = false;
 let mytimer;
 
 //Добавление блока в игровое поле
-        function KubAdd(col) {
+      function KubAdd(col, newW) {
             let widthGame = document.getElementById("games").offsetWidth-50;	
                 for (let i = 0; i < col; i++) {
-                    let newW = getRandomArbitrary (15, 30);
+                    newW = getRandomArbitrary (15, 30);
                     let newTop = getRandomArbitrary (45, 400);
                     let newLeft = getRandomArbitrary (45, widthGame);	
                     let colors = ['red', 'green', 'black', 'yellow'];
                     let newColorNumber = getRandomArbitrary (0, 3);
-                    let color = (colors[newColorNumber]);
+                    let color = (colors[newColorNumber]);    
                     $("#games").append('<div class="kybik" data-color="'+color+'" onClick="KubClick(this)" style="width: '+newW+'px; height: '+newW+'px; top: '+newTop+'px; left: '+newLeft+'px; display: block; background-color:'+color+';"></div>');
                 
                  
@@ -22,15 +21,17 @@ let mytimer;
         function KubClick($this) {
             let points=$("#points").text();
             let color = $($this).attr('data-color');
-            
-            console.log(color);
+            let width = $($this).width();
+
                 if (color == 'yellow')
                     points=+points+2;
-                        else
-                            points++;
-                            $("#points").text(points);
-                            $($this).remove();
-                            KubAdd(getRandomArbitrary (0, 2));          
+                        if (width < 20)
+                            points=+points+2;
+                                else
+                                    points++;
+                                    $("#points").text(points);
+                                    $($this).remove();
+                                    KubAdd(getRandomArbitrary (0, 2));          
 };
 
 let time;
@@ -139,13 +140,13 @@ document.getElementById('add').onclick = function () {
     location.reload();
 };
 
+
     function out () {
         let out ='';
             for (let key in allName) {
                 out += (+key +1) + ' ' +allName[key].name +' - '+ allName[key].point + ' очков' + '<br>';
             }
-        document.getElementById('out').innerHTML = out;
-            
+        document.getElementById('out').innerHTML = out;    
 };
 
  
