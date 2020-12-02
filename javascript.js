@@ -12,7 +12,7 @@ let mytimer;
                     let newColorNumber = getRandomArbitrary (0, 3);
                     let color = (colors[newColorNumber]);    
                     $("#games").append('<div class="kybik" data-color="'+color+'" onClick="KubClick(this)" style="width: '+newW+'px; height: '+newW+'px; top: '+newTop+'px; left: '+newLeft+'px; display: block; background-color:'+color+';"></div>');
-                
+						
                  
                 };
 };
@@ -31,7 +31,11 @@ let mytimer;
                                     points++;
                                     $("#points").text(points);
                                     $($this).remove();
-                                    KubAdd(getRandomArbitrary (0, 2));          
+                                    KubAdd(getRandomArbitrary (0, 1)); 
+                                     
+				if (document.getElementById("games").childNodes.length < 1) 
+					KubAdd(3);
+													
 };
 
 let time;
