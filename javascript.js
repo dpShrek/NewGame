@@ -31,7 +31,7 @@ let mytimer;
                                     points++;
                                     $("#points").text(points);
                                     $($this).remove();
-                                    KubAdd(getRandomArbitrary (0, 1)); 
+                                    KubAdd(getRandomArbitrary (0, 2)); 
                                      
 				if (document.getElementById("games").childNodes.length < 1) 
 					KubAdd(3);
