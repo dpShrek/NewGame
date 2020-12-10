@@ -1,12 +1,31 @@
 body {
     padding: 0;
     margin: 0;
+    background: #fbe2b3 !important;
 }
 .heads  {
     margin-top: 50px;
     display: flex;
-    justify-content: space-between;
 }
+
+.top {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    min-height: 50px;
+    align-items: flex-end;
+}
+
+.game_place {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.leaft_col {
+    width: 79%;
+}
+
 .name-game p {
     text-align: center;
     font-size: 35px;
@@ -44,35 +63,38 @@ body {
 .info {
     display: flex;
 }
-.name-persone {
-    font-size: 25px;
-    margin-right: 12%;
+.name-persone p{
+    font-size: 25px; 
+    padding-top: 13px;  
 }
+
+.name-persone {
+    min-height: 50px;
+}
+
 .games {
     margin-top: 3%;
     height: 500px;
-    width: 70%;
+    width: 100%;
     background-color:white;
     border: solid 1px black;
     border-radius: 5px;
     position: relative;
 }
 .result {
-    margin-top: 3%;
-    margin-left: 3%;
+    margin-top: 12%;
     background-color: white;
     height: 500px;
-    width: 30%;
     border: solid 1px black;
     border-radius: 5px;
 }
 .flex-cont {
-    display: flex;
+    width: 20%;
 }
 .kybik {
     height: 15px;
     width: 15px;
-    
+    overflow: hidden;
     background-color: black;
     border-radius: 2px;
     position: absolute;
@@ -86,4 +108,22 @@ body {
 
 li {
     list-style: none;
+}
+
+
+
+
+@media (max-width: 768px) {
+    .leaft_col {
+        width: 100%;
+    }
+
+    .flex-cont {
+        width: 100%;
+    }
+
+    .result {
+        margin-top: 0;
+        height: min-content;
+    }
 }

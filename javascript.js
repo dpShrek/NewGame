@@ -3,15 +3,15 @@ let mytimer;
 
 //Добавление блока в игровое поле
       function KubAdd(col, newW) {
-            let widthGame = document.getElementById("games").offsetWidth-50;	
+            let widthGame = document.getElementById("games").offsetWidth;	
                 for (let i = 0; i < col; i++) {
                     newW = getRandomArbitrary (15, 30);
-                    let newTop = getRandomArbitrary (45, 400);
-                    let newLeft = getRandomArbitrary (45, widthGame);	
+                    let newTop = getRandomArbitrary (45, 450);
+                    let newLeft = getRandomArbitrary (1, 90);	
                     let colors = ['red', 'green', 'black', 'yellow'];
                     let newColorNumber = getRandomArbitrary (0, 3);
                     let color = (colors[newColorNumber]);    
-                    $("#games").append('<div class="kybik" data-color="'+color+'" onClick="KubClick(this)" style="width: '+newW+'px; height: '+newW+'px; top: '+newTop+'px; left: '+newLeft+'px; display: block; background-color:'+color+';"></div>');
+                    $("#games").append('<div class="kybik" data-color="'+color+'" onClick="KubClick(this)" style="width: '+newW+'px; height: '+newW+'px; top: '+newTop+'px; left: '+newLeft+'%; display: block; background-color:'+color+';"></div>');
 						
                  
                 };
