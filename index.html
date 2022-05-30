@@ -1,119 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+      integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
+      crossorigin="anonymous"
+    />
 
     <title>Быстрый клик</title>
-
-</head>
-<body>
-
-  
-    
+  </head>
+  <body>
     <div class="container">
+      <div class="name-game">
+        <p>Быстрый клик</p>
+      </div>
 
-        <div class="name-game">
-            <p>Быстрый клик</p>
-        </div>
-
-
-        <div class="game_place">
-          <div class="leaft_col">
-        
-            <div class="top">
-            
-              <div class="heads-btn">
-                  <button type="button" class="btn btn-success" id="start">Старт</button>
-                  <button type="button" class="btn btn-danger" id="new-game">Новая игра</button>
-              </div>
-
-
-              <div class="info">
-                <div class="point">
-                  <p>Очки</p>
-                  <div class="points-wind"><p id="points">0</p></div>
-                </div>
-
-                <div class="time">
-                  <p>Время</p>
-                    <div class="time-sek">0<span id="zero">1</span>:<span id="seconds">00</span></div>
-                </div>
-              </div>
-
+      <div class="game_place">
+        <div class="leaft_col">
+          <div class="top">
+            <div class="heads-btn">
+              <button type="button" class="btn btn-success" id="start">
+                Старт
+              </button>
+              <button type="button" class="btn btn-danger" id="new-game">
+                Новая игра
+              </button>
             </div>
 
-                <div class="games" id="games"></div>
-  
+            <div class="info">
+              <div class="point">
+                <p>Очки</p>
+                <div class="points-wind"><p id="points">0</p></div>
+              </div>
+
+              <div class="time">
+                <p>Время</p>
+                <div class="time-sek">
+                  0<span id="zero">1</span>:<span id="seconds">00</span>
+                </div>
+              </div>
+            </div>
           </div>
 
-            <div class="flex-cont">
-              <div class="name-persone">
-                <p>Результаты</p> 
-              </div>
-                <div class="result">
-                  <div class="name-result" id="out"></div>
-                </div>
-            </div>
-
-      </div>
-        <br>
-
-    <div class="info">
-     
-       <br>
-      <ul>
-        <li>
-          1. <strong>Суть игры</strong> - заработать как можно больше баллов. 
-        </li>
-        <li>
-          2. При нажатии на кубик, Вы получаете <strong>1 балл</strong>.
-        </li>
-        <li>
-          3. Кубик маленького размера и кубик желтого цвета дает <strong>2 балла</strong>. 
-        </li>
-      </ul>
-    </div>
-    </div>
-
-    
-
-  
-  <!-- Modal -->
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Время вышло, Вы набрали (<span id="newPoints"></span>) очков!<br></h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            
-            <span aria-hidden="true">&times;</span>
-          </button>
+          <div class="games" id="games"></div>
         </div>
-        <div class="modal-body">
+
+        <div class="flex-cont">
+          <div class="name-persone">
+            <p>Результаты</p>
+          </div>
+          <div class="result">
+            <div class="name-result" id="out"></div>
+          </div>
+        </div>
+      </div>
+      <br />
+
+      <div class="info">
+        <br />
+        <ul>
+          <li>
+            1. <strong>Суть игры</strong> - заработать как можно больше баллов.
+          </li>
+          <li>
+            2. При нажатии на кубик, Вы получаете <strong>1 балл</strong>.
+          </li>
+          <li>
+            3. Кубик маленького размера и кубик желтого цвета дает
+            <strong>2 балла</strong>.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">
+              Время вышло, Вы набрали (<span id="newPoints"></span>) очков!<br />
+            </h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
             <form>
-            <input id="in" type="text" placeholder="Имя" required />
-        </form>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="add">Сохранить</button>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal" id="newGame">Начать заново</button>
+              <input id="in" type="text" placeholder="Имя" required />
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" id="add">
+              Сохранить
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+              id="newGame"
+            >
+              Начать заново
+            </button>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  
-  
-  
 
-
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-<script src="javascript.js"></script>
-</body>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+      integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+      crossorigin="anonymous"
+    ></script>
+    <script src="javascript.js"></script>
+  </body>
 </html>
